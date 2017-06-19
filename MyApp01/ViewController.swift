@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelMesg: UILabel!
     
     @IBAction func sayYa(_ sender: Any) {
-        labelMesg.text = "Ya!"
+        labelMesg.text = createLottery()
     }
     
     override func viewDidLoad() {
@@ -24,6 +24,23 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    private func createLottery() ->String {
+        var setLottery:Set<Int> = []
+        var temp:Int
+        while setLottery.count < 6 {
+            temp = Int(arc4random_uniform(49)) + 1
+            setLottery.insert(temp)
+        }
+        
+        var strLottery = ""
+        for lottery in setLottery {
+            strLottery.append("\(lottery) ")
+        }
+        
+        return strLottery
+    }
+    
 
 
 }
