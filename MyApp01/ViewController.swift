@@ -12,6 +12,12 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var btnClick: UIButton!
     @IBOutlet weak var labelMesg: UILabel!
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label6: UILabel!
+    @IBOutlet weak var label5: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label3: UILabel!
     
     @IBAction func sayYa(_ sender: Any) {
         labelMesg.text = createLottery()
@@ -19,6 +25,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +46,15 @@ class ViewController: UIViewController {
         for lottery in setLottery {
             strLottery.append("\(lottery) ")
         }
+        
+        let arrayLottery = Array(setLottery)
+        label1.text = String(arrayLottery[0])
+        label2.text = String(arrayLottery[1])
+        label3.text = String(arrayLottery[2])
+        label4.text = String(arrayLottery[3])
+        label5.text = String(arrayLottery[4])
+        label6.text = String(arrayLottery[5])
+        
         
         return strLottery
     }
